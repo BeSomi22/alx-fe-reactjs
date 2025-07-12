@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import WelcomeMessage from "./components/WelcomeMessage";
-import MainContext from "./components/MainContext";
+import MainContext from "./components/MainContent";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserProfile from "./components/UserProfile";
@@ -13,7 +13,7 @@ function App() {
     <>
       <WelcomeMessage />
       <Header />
-      <MainContext />
+      <MainContent />
       <Footer />
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
     </>
