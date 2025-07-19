@@ -1,7 +1,16 @@
 function Footer() {
+  const footerStyle = {
+    backgroundColor: "#000",
+    color: "#ccc",
+    padding: "24px",
+    borderTop: "1px solid #444",
+    textAlign: "center",
+    fontSize: "14px",
+  };
+
   return (
-    <footer className="bg-black text-gray-300 py-6 px-4 border-t border-gray-700 text-center">
-      <p className="text-sm">&copy; 2023 City Lovers</p>
+    <footer style={footerStyle}>
+      <p>© 2023 City Lovers</p>
     </footer>
   );
 }

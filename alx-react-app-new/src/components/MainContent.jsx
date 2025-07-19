@@ -1,9 +1,18 @@
 function MainContent() {
+  const mainStyle = {
+    flex: 1,
+    padding: "40px 24px",
+    background:
+      "radial-gradient(circle, rgba(51,53,51,1) 32%, rgba(36,36,35,1) 78%)",
+    color: "#e7e41d",
+    fontSize: "18px",
+    fontWeight: "600",
+    minHeight: "calc(100vh - 100px)", // leave space for footer
+  };
+
   return (
-    <main className="flex-1 px-6 py-10 bg-[radial-gradient(circle,rgba(51,53,51,1)_32%,rgba(36,36,35,1)_78%)] text-white text-lg">
-      <p className="text-[#e7e41d] font-semibold">
-        I love to visit New York, Paris, and Tokyo.
-      </p>
+    <main style={mainStyle}>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
     </main>
   );
 }
