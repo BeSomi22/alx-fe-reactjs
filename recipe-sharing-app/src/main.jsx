@@ -1,19 +1,9 @@
-import { StrictMode } from "react";
 import React from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RecipeDetails from "./components/RecipeDetails.jsx";
+import App from "./App";
 
-createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/recipe/:id" element={<RecipeDetails />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
