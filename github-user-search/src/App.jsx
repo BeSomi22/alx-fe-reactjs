@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SearchBar from "../components/SearchBar";
-import { getUser } from "../services/githubApi";
+import SearchBar from "./components/SearchBar";
+import { getUser } from "./services/githubApi";
 
 export default function App() {
   const [user, setUser] = useState(null);
