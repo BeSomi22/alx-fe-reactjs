@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import { getUser } from "./services/githubApi";
+import Search from "./components/Search";
+import { fetchUserData } from "./services/githubService";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -10,7 +10,7 @@ export default function App() {
     setError("");
     setUser(null);
     try {
-      const userData = await getUser(username);
+      const userData = await fetchUserData(username);
       setUser(userData);
     } catch {
       setError("User not found or error fetching data.");
@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial" }}>
       <h1>GitHub User Search</h1>
-      <SearchBar onSearch={handleSearch} />
+      <Search onSearch={handleSearch} />
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
