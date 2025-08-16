@@ -3,18 +3,41 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "200g spaghetti",
+      "2 eggs",
+      "50g Parmesan cheese",
+      "100g pancetta",
+      "Black pepper"
+    ],
+    "instructions": [
+      "Cook the spaghetti in salted boiling water.",
+      "Fry pancetta until crispy.",
+      "Whisk eggs and Parmesan together.",
+      "Drain spaghetti and mix with pancetta.",
+      "Remove from heat, add egg mixture, and stir until creamy."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 3,
-    "title": "Beef Tacos",
-    "summary": "Crispy taco shells filled with seasoned beef, lettuce, cheese, and salsa.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "500g chicken breast",
+      "1 cup yogurt",
+      "2 tbsp garam masala",
+      "1 onion",
+      "1 cup tomato puree",
+      "1/2 cup cream"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices overnight.",
+      "Grill or pan fry chicken until cooked.",
+      "Cook onions and tomato puree in a pan.",
+      "Add cream and simmer.",
+      "Add chicken to sauce and cook for 10 mins."
+    ]
   }
 ]

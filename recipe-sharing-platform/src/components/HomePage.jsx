@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import data from "../data.json"; // Import mock data
+import { Link } from "react-router-dom";
+import data from "../data.json";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    // Load recipes from mock data
     setRecipes(data);
   }, []);
 
@@ -15,20 +15,21 @@ const HomePage = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {recipes.map((recipe) => (
-          <div
+          <Link
+            to={`/recipe/${recipe.id}`}
             key={recipe.id}
             className="bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300"
           >
             <img
               src={recipe.image}
               alt={recipe.title}
-              className="w-1/4 h-auto object-cover rounded-lg mx-auto mt-4"
+              className="w-24 h-24 object-contain rounded-lg mx-auto mt-4"
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
               <p className="text-gray-600">{recipe.summary}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
