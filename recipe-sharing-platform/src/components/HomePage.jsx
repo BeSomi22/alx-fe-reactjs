@@ -23,7 +23,6 @@ const HomePage = () => {
               src={recipe.image}
               alt={recipe.title}
               className="w-1/4 h-auto object-cover rounded-lg mx-auto mt-4"
-              //   className="w-[20%]h-[20%] rounded-t-2xl"
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
