@@ -1,62 +1,34 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./components/Home";
-// import Profile from "./components/Profile";
-// import ProfileDetails from "./components/ProfileDetails";
-// import ProfileSettings from "./components/ProfileSettings";
-// import Post from "./components/Post";
-// import ProtectedRoute from "./components/ProtectedRoute";
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-
-//         {/* Protected Profile with Nested Routes */}
-//         <Route
-//           path="/profile"
-//           element={
-//             <ProtectedRoute>
-//               <Profile />
-//             </ProtectedRoute>
-//           }
-//         >
-//           <Route path="details" element={<ProfileDetails />} />
-//           <Route path="settings" element={<ProfileSettings />} />
-//         </Route>
-
-//         {/* Dynamic Route for blog posts */}
-//         <Route path="/post/:id" element={<Post />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
+import Post from "./components/Post";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {/* Protected Profile with Nested Routes */}
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="settings" element={<ProfileSettings />} />
+        </Route>
+
+        {/* Dynamic Route for blog posts */}
+        <Route path="/post/:id" element={<Post />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
