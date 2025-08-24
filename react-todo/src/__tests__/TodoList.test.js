@@ -85,6 +85,7 @@
 
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoList from "../components/TodoList";
+import AddTodoForm from "../components/AddTodoForm";
 import "@testing-library/jest-dom";
 
 describe("TodoList Component", () => {
@@ -94,8 +95,9 @@ describe("TodoList Component", () => {
     expect(screen.getByText("Write Tests")).toBeInTheDocument();
   });
 
-  test("can add a new todo", () => {
+  test("can add a new todo using AddTodoForm", () => {
     render(<TodoList />);
+
     const input = screen.getByPlaceholderText("New todo");
     const addButton = screen.getByText("Add");
 
@@ -103,6 +105,7 @@ describe("TodoList Component", () => {
     fireEvent.click(addButton);
 
     expect(screen.getByText("New Todo")).toBeInTheDocument();
+    expect(input.value).toBe(""); // input should be cleared
   });
 
   test("can toggle a todo as completed", () => {
@@ -123,5 +126,32 @@ describe("TodoList Component", () => {
 
     fireEvent.click(deleteButton);
     expect(todo).not.toBeInTheDocument();
+  });
+});
+
+describe("AddTodoForm Component", () => {
+  test("calls addTodo function on submit", () => {
+    const addTodoMock = jest.fn();
+    render(<AddTodoForm addTodo={addTodoMock} />);
+
+    const input = screen.getByPlaceholderText("New todo");
+    const addButton = screen.getByText("Add");
+
+    fireEvent.change(input, { target: { value: "Test Todo" } });
+    fireEvent.click(addButton);
+
+    expect(addTodoMock).toHaveBeenCalledTimes(1);
+    expect(addTodoMock).toHaveBeenCalledWith("Test Todo");
+    expect(input.value).toBe(""); // input cleared after submit
+  });
+
+  test("does not call addTodo if input is empty", () => {
+    const addTodoMock = jest.fn();
+    render(<AddTodoForm addTodo={addTodoMock} />);
+
+    const addButton = screen.getByText("Add");
+    fireEvent.click(addButton);
+
+    expect(addTodoMock).not.toHaveBeenCalled();
   });
 });
